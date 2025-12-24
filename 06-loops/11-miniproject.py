@@ -9,16 +9,25 @@ inventory = {
 cart =[]
 print('Bienvenido a pasteles Dev')
 print('Inventario: ')
+for product, price in inventory.items():
+    print(f'{product.capitalize()}: ${price}')
+    
 option = ' '
-while option != '7':
+while True:
     print('*************')
-    print("Carrito de compras")
-    print('Opciones:')
-    print('1- Agregar un producto')
-    print('2- Eliminar un producto')
-    print('3- Mostrar productos ordenados')
-    print('4- Buscar un producto')
-    print('5- Contar productos del carrito')
-    print ('6- Vaciar carrito ')
-    print ('7-Salir')
-    print('*************')
+    option=input("Que dulce desea comprar?(escribir 'salir' para terminar): ").lower()
+    if option== ('salir'):
+        break
+    elif option in inventory:
+        cart.append(option)
+        print(f'{option.capitalize()} agregado al carrito.')
+    else:
+        print('Producto no disponible.')
+print('*************')
+total = 0
+print('Productos en el carrito:')
+for item in cart:
+    print(f'- {item.capitalize()}: ${inventory[item]}')
+    total += inventory[item]
+
+print(f'Total a pagar: ${total}')
