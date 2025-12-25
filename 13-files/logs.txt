@@ -1,0 +1,3 @@
+[25/12/2025, 19:45:17] Error en base de datos
+ [25/12/2025, 19:45:45] Error en servidor
+ [25/12/2025, 19:46:14] Error en red
